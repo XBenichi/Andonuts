@@ -1,0 +1,10 @@
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\bin\Debug\netcoreapp3.1\Engine.deps.json
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\bin\Debug\netcoreapp3.1\Engine.dll
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\bin\Debug\netcoreapp3.1\Engine.pdb
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.csproj.AssemblyReference.cache
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.AssemblyInfoInputs.cache
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.AssemblyInfo.cs
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.csproj.CoreCompileInputs.cache
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.dll
+C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Engine\Andonuts\obj\Debug\netcoreapp3.1\Engine.pdb
