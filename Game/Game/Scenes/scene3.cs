@@ -14,7 +14,8 @@ namespace Game.Scenes
 		public scene3()
 		{
 			Engine.camera.offset = new Vector2((int)Raylib.GetScreenWidth() / 2 - 8, (int)Raylib.GetScreenHeight() / 2 - 12);
-			
+			Engine.camera.target = playerPosition;
+
 		}
 		
 		public Vector2 playerPosition = new Vector2(0, 0);
@@ -28,9 +29,9 @@ namespace Game.Scenes
 			inputVector.Y = Convert.ToInt32(Raylib.IsKeyDown(KeyboardKey.KEY_DOWN)) - Convert.ToInt32(Raylib.IsKeyDown(KeyboardKey.KEY_UP));
 
 			
-			//Engine.camera.target.X += (int)Math.Round(inputVector.X * Raylib.GetFrameTime() * 32);
-			//Engine.camera.target.Y += (int)Math.Round(inputVector.Y * Raylib.GetFrameTime() * 32);
-			Engine.camera.target = playerPosition;
+			Engine.camera.target.X += (int)Math.Round(inputVector.X * Raylib.GetFrameTime() * 32);
+			Engine.camera.target.Y += (int)Math.Round(inputVector.Y * Raylib.GetFrameTime() * 32);
+			//Engine.camera.target = playerPosition;
 			playerPosition.X += (int)Math.Round(inputVector.X * Raylib.GetFrameTime() * 32);
 			playerPosition.Y += (int)Math.Round(inputVector.Y * Raylib.GetFrameTime() * 32);
 			if (Raylib.IsKeyPressed(KeyboardKey.KEY_HOME))

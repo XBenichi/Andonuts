@@ -1,0 +1,22 @@
+{
+    "spritesheet": "sprite.png",
+    "frames": [
+        {"x": 0,"y":24,"w": 16,"h":24},
+        {"x": 16,"y":24,"w": 16,"h":24}
+    ],
+    "animations": {
+        "idle":{
+            "loop": true,
+            "sequence": [
+                {"time":1,"frame":0}
+            ]
+        },
+        "walk":{
+            "loop": true,
+            "sequence": [
+                {"time":15,"frame":0},
+                {"time":15,"frame":1}
+            ]
+        }
+    }
+}

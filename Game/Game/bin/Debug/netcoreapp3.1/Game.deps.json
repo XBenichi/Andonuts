@@ -9,10 +9,19 @@
       "Game/1.0.0": {
         "dependencies": {
           "Andonuts": "1.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "Raylib-cs": "3.7.0.1"
         },
         "runtime": {
           "Game.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
         }
       },
       "Raylib-cs/3.7.0.1": {
@@ -51,6 +60,7 @@
       "System.Numerics.Vectors/4.5.0": {},
       "Andonuts/1.0.0": {
         "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
           "Raylib-cs": "3.7.0.1"
         },
         "runtime": {
@@ -64,6 +74,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Raylib-cs/3.7.0.1": {
       "type": "package",

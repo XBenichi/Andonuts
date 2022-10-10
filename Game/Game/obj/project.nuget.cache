@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "E7DuZPG2YDw2ocwd2Q8+H4O48BkbQ+m9YN09vqX2qET3CtHfdqaUg/rW9xIlHYQNpACo7JXxlhH3mgoH32wk+Q==",
+  "dgSpecHash": "YuhJTNwoB795e9334MUlEBJJYv6mMTSSuEcIAUGOnLYEaMMEeCyMWNwM/fvpLg/YalxJa9ekH8QG20ClaOVMXw==",
   "success": true,
   "projectFilePath": "C:\\Users\\My HP\\OneDrive\\Documents\\Andonuts\\Engine\\Andonuts\\Game\\Game\\Game.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\My HP\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\My HP\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
     "C:\\Users\\My HP\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
