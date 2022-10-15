@@ -7,7 +7,6 @@ using Andonuts.Scenes;
 using Andonuts.Scenes.Transitions;
 using Andonuts.Graphics;
 using Raylib_cs;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace Game.Scenes
@@ -25,7 +24,7 @@ namespace Game.Scenes
         public class Player
         {
 
-            public Graphic sprite = new Graphic("animation.json",new Vector2(0,0));
+            public Graphic sprite = new Graphic("animation",new Vector2(0,0));
 
             public Vector2 playerPosition = new Vector2(0, 0);
             public enum states { idle, walk };
@@ -46,10 +45,10 @@ namespace Game.Scenes
         {
             base.Update();
 
-            
 
-            
 
+
+            player.sprite.Update();
 
 
 
@@ -73,11 +72,11 @@ namespace Game.Scenes
 
             if (player.inputVector == Vector2.Zero)
             {
-                
+                player.sprite.changeAnimation("idle");
             }
             else
             {
-                
+                player.sprite.changeAnimation("walk");
             }
 
         }

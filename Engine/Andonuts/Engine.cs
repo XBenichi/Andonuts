@@ -13,11 +13,15 @@ namespace Andonuts
     public class Engine
     {
 
-        public static void Initialize(string[] args)
+        public static void Initialize(string[] args, int screenWidth, int screenHeight, string title)
         {
-            Raylib.InitWindow(320, 180, "work mf");
+            screenSize = new Vector2(screenWidth, screenHeight);
 
-            Raylib.SetWindowSize(320 * ScreenScale, 180 * ScreenScale);
+            Raylib.InitWindow(screenWidth, screenHeight, title);
+
+            Raylib.SetWindowSize(screenWidth * ScreenScale, screenHeight * ScreenScale);
+
+            Raylib.SetWindowPosition((Raylib.GetMonitorWidth(0) / 2) - (screenWidth * ScreenScale) / 2, (Raylib.GetMonitorHeight(0) / 2) - (screenHeight * ScreenScale) / 2);
 
             Raylib.SetTargetFPS(60);
 
@@ -32,8 +36,12 @@ namespace Andonuts
             Console.WriteLine(" ___  _ _  ___  ___  _ _  _ _  ___  ___" +
                 "\n| . || \\ || . \\| . || \\ || | ||_ _|/ __>" +
                 "\n|   ||   || | || | ||   || | | | | \\__ \\" +
-                "\n|_|_||_\\_||___/|___||_\\_||___| |_| <___/ v0.0.1");
+                "\n|_|_||_\\_||___/|___||_\\_||___| |_| <___/ v0.0.2");
             Console.WriteLine("--------------------------------------------------------------------------------");
+
+            target = Raylib.LoadRenderTexture((int)screenSize.X, (int)screenSize.Y);
+
+            targetflipped = Raylib.LoadRenderTexture((int)screenSize.X, (int)screenSize.Y);
 
         }
 
@@ -44,15 +52,15 @@ namespace Andonuts
 
                 if (Raylib.IsKeyPressed(KeyboardKey.KEY_F5))
                 {
-                    if (320 * ScreenScale < Raylib.GetMonitorWidth(0) && 180 * ScreenScale < Raylib.GetMonitorHeight(0))
+                    if ((int)screenSize.X * ScreenScale < Raylib.GetMonitorWidth(0) && (int)screenSize.Y * ScreenScale < Raylib.GetMonitorHeight(0))
                     {
                         ScreenScale += 1;
-                    } 
+                    }
                     else
                     {
                         ScreenScale = 1;
                     }
-                    Raylib.SetWindowSize(320 * ScreenScale, 180 * ScreenScale);
+                    Raylib.SetWindowSize((int)screenSize.X * ScreenScale, (int)screenSize.Y * ScreenScale);
                 }
 
                 try
@@ -89,7 +97,7 @@ namespace Andonuts
 
         public static void Draw()
         {
-           
+
         }
 
         private static bool Quit;
@@ -98,10 +106,12 @@ namespace Andonuts
 
         public static int ScreenScale = 2;
 
-        private static RenderTexture2D target = Raylib.LoadRenderTexture(320,180);
-       
-        private static RenderTexture2D targetflipped = Raylib.LoadRenderTexture(320,180);
+        private static RenderTexture2D target;
+
+        private static RenderTexture2D targetflipped;
 
         public static Camera2D camera = new Camera2D();
+
+        public static Vector2 screenSize = new Vector2();
     }
 }

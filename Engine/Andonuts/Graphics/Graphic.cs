@@ -2,40 +2,38 @@
 using System.Collections.Generic;
 using System.Text;
 using Raylib_cs;
-using Newtonsoft.Json;
+using fNbt;
 using System.Numerics;
 using System.IO;
 using System.Reflection;
+using System.Collections;
 
 namespace Andonuts.Graphics
 {
 	public class Graphic
 	{
-		public Graphic(string resource, Vector2 position)
+		public Graphic(string resource, Vector2 Sposition)
 		{
-			using (StreamReader r = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Resources/" + resource))
-			{
-				string json = r.ReadToEnd();
 
-				animationFile = JsonConvert.DeserializeObject(json);
+			animationFile.LoadFromFile(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Resources/" + resource + ".dat");
 
 
 
-				position = position;
+			position = Sposition;
 
-				sprite = Raylib.LoadTexture(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Resources/" + animationFile.spritesheet);
+			sprite = Raylib.LoadTexture(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Resources/" + animationFile.RootTag.Get<NbtString>("spritesheet").Value);
 
-				frameRec.x = (int)animationFile.frames[0].x;
-				frameRec.y = (int)animationFile.frames[0].y;
-				frameRec.width = (int)animationFile.frames[0].w;
-				frameRec.height = (int)animationFile.frames[0].h;
+            frameRec.x = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("x").Value;
+			frameRec.y = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("y").Value;
+			frameRec.width = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("w").Value;
+			frameRec.height = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("h").Value;
 
-				visible = true;
+			changeAnimation("idle");
 
-				changeAnimation("walk");
+			visible = true;
 
+			
 
-			}
 		}
 
 		protected Graphic()
@@ -54,11 +52,13 @@ namespace Andonuts.Graphics
 
 		public void changeAnimation(string anim)
 		{
-			object animArray = animationFile.animations;
-			CurrentAnimation = animArray.GetType();
-			foreach (object prop in animArray.GetType().GetProperties())
-            {
-				Console.WriteLine(prop);
+			if (anim != CurrentAnimation)
+			{
+				CurrentAnimation = anim;
+
+				currentFrame = 0;
+
+				UpdateAnimation();
 			}
 			
 		}
@@ -66,41 +66,55 @@ namespace Andonuts.Graphics
 
 		public void Update()
 		{
-			/*if (visible)
+			if (visible)
 			{
 				framesCounter++;
-				if (framesCounter >= (60 / (int)animation.FindIndex()))
+				if (framesCounter > animationFile.RootTag.Get<NbtCompound>("animations").Get<NbtCompound>(CurrentAnimation).Get<NbtCompound>("sequence").Get<NbtCompound>(currentFrame.ToString()).Get<NbtInt>("time").Value)
 				{
-					framesCounter = 0;
-					currentFrame++;
-
-					if (currentFrame > animation.animations.walk.sequence.Length())
-					{
-						currentFrame = 0;
-					}
-
-					frameRec.x = (int)animation.frames[(int)animation.animations.walk.sequence[currentFrame].frame].x;
-					frameRec.y = (int)animation.frames[(int)animation.animations.walk.sequence[currentFrame].frame].y;
-					frameRec.width = (int)animation.frames[(int)animation.animations.walk.sequence[currentFrame].frame].w;
-					frameRec.height = (int)animation.frames[(int)animation.animations.walk.sequence[currentFrame].frame].h;
+					UpdateAnimation();
 				}
-			}*/
+			}
 		}
 
-		
+		private void UpdateAnimation()
+        {
+			framesCounter = 0;
+
+			if (animationFile.RootTag.Get<NbtCompound>("animations").Get<NbtCompound>(CurrentAnimation).Get<NbtCompound>("sequence").Get<NbtCompound>((currentFrame + 1).ToString()) == null)
+			{
+				if (animationFile.RootTag.Get<NbtCompound>("animations").Get<NbtCompound>(CurrentAnimation).Get<NbtByte>("loop").Value == 1)
+				{
+					currentFrame = 0;
+				}
+			}
+			else
+			{
+				currentFrame++;
+			}
 
 
-	private Vector2 position;
+			currentSpriteFrame = animationFile.RootTag.Get<NbtCompound>("animations").Get<NbtCompound>(CurrentAnimation).Get<NbtCompound>("sequence").Get<NbtCompound>(currentFrame.ToString()).Get<NbtInt>("frame").Value;
+			frameRec.x = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("x").Value;
+			frameRec.y = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("y").Value;
+			frameRec.width = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("w").Value;
+			frameRec.height = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("h").Value;
+		}
+
+
+
+		private Vector2 position;
 
 		private Texture2D sprite;
 
-		private dynamic animationFile;
+		private NbtFile animationFile = new NbtFile();
 		
-		private object CurrentAnimation;
+		private string CurrentAnimation;
 
 		private bool visible = false;
 
 		private int currentFrame = 0;
+
+		private int currentSpriteFrame = 0;
 
 		private int framesCounter = 0;
 

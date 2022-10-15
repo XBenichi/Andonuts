@@ -16,6 +16,14 @@
           "Game.dll": {}
         }
       },
+      "fNbt/0.6.4": {
+        "runtime": {
+          "lib/net35-client/fNbt.dll": {
+            "assemblyVersion": "0.6.4.0",
+            "fileVersion": "0.6.4.0"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -61,7 +69,8 @@
       "Andonuts/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
-          "Raylib-cs": "3.7.0.1"
+          "Raylib-cs": "3.7.0.1",
+          "fNbt": "0.6.4"
         },
         "runtime": {
           "Andonuts.dll": {}
@@ -74,6 +83,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "fNbt/0.6.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ApHeYBciy/XixfMdHjknJ4ct4bCrg/rWCOgiI/YyHRp5JMtldEWnQFc23y+S7MOZbL7rG2L+cD8r9P2U1ardqQ==",
+      "path": "fnbt/0.6.4",
+      "hashPath": "fnbt.0.6.4.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",

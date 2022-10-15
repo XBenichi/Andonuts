@@ -14,7 +14,7 @@ namespace Game
 		{
 			try
 			{
-				Engine.Initialize(args);
+				Engine.Initialize(args,320,180,"andonuts");
 				Scene newScene = new TitleScene();
 				SceneManager.Instance.Push(newScene);
 				//Console.WriteLine(SceneManager.Instance);
