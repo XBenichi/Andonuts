@@ -27,6 +27,8 @@ namespace Andonuts.Graphics
 			frameRec.y = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("y").Value;
 			frameRec.width = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("w").Value;
 			frameRec.height = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("h").Value;
+			origin.X = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("ox").Value;
+			origin.Y = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("oy").Value;
 
 			changeAnimation("idle");
 
@@ -44,7 +46,7 @@ namespace Andonuts.Graphics
 		{
 			if (visible)
 			{
-				Raylib.DrawTextureRec(sprite, frameRec, position, Raylib_cs.Color.WHITE);
+				Raylib.DrawTextureRec(sprite, frameRec, position - origin, Raylib_cs.Color.WHITE);
 			}
 		}
 
@@ -98,16 +100,20 @@ namespace Andonuts.Graphics
 			frameRec.y = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("y").Value;
 			frameRec.width = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("w").Value;
 			frameRec.height = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("h").Value;
+			origin.X = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("ox").Value;
+			origin.Y = (int)animationFile.RootTag.Get<NbtCompound>("frames").Get<NbtCompound>(currentSpriteFrame.ToString()).Get<NbtInt>("oy").Value;
 		}
 
 
 
-		private Vector2 position;
+		public Vector2 position;
 
 		private Texture2D sprite;
 
 		private NbtFile animationFile = new NbtFile();
-		
+
+		private Vector2 origin = Vector2.Zero;
+
 		private string CurrentAnimation;
 
 		private bool visible = false;

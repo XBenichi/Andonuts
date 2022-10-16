@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0": {
       "fNbt/0.6.4": {
         "type": "package",
         "compile": {
@@ -11,16 +11,16 @@
           "lib/net35-client/fNbt.dll": {}
         }
       },
-      "Raylib-cs/3.7.0.1": {
+      "Raylib-cs/4.0.0": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
         "compile": {
-          "lib/netstandard2.1/Raylib-cs.dll": {}
+          "lib/net5.0/Raylib-cs.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Raylib-cs.dll": {}
+          "lib/net5.0/Raylib-cs.dll": {}
         },
         "runtimeTargets": {
           "runtimes/linux-x64/native/libraylib.so": {
@@ -66,16 +66,19 @@
         "lib/net35-client/fNbt.xml"
       ]
     },
-    "Raylib-cs/3.7.0.1": {
-      "sha512": "DN9MC1QyyUFd5rskN9czcZ0w1DjvZ23vaJmwexaPOqQ0b0qJppq1hL0jWfl3fzAANJ59ZxuyUyMF6gSIM7QuWg==",
+    "Raylib-cs/4.0.0": {
+      "sha512": "ia5oUkINva747wBMnt7NInIYHuGcybfP1i61YwGQP1jkWeqCYmCq+B1AqB9k+RrlgeJtuTSpdP814Q7mvR8sfw==",
       "type": "package",
-      "path": "raylib-cs/3.7.0.1",
+      "path": "raylib-cs/4.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/netstandard2.1/Raylib-cs.dll",
-        "lib/netstandard2.1/Raylib-cs.xml",
-        "raylib-cs.3.7.0.1.nupkg.sha512",
+        "README.md",
+        "lib/net5.0/Raylib-cs.dll",
+        "lib/net5.0/Raylib-cs.xml",
+        "lib/net6.0/Raylib-cs.dll",
+        "lib/net6.0/Raylib-cs.xml",
+        "raylib-cs.4.0.0.nupkg.sha512",
         "raylib-cs.nuspec",
         "raylib-cs_64x64.png",
         "runtimes/linux-x64/native/libraylib.so",
@@ -133,8 +136,8 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Raylib-cs >= 3.7.0.1",
+    "net5.0": [
+      "Raylib-cs >= 4.0.0",
       "fNbt >= 0.6.4"
     ]
   },
@@ -155,15 +158,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {}
         }
       },
@@ -174,12 +177,12 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "dependencies": {
           "Raylib-cs": {
             "target": "Package",
-            "version": "[3.7.0.1, )"
+            "version": "[4.0.0, )"
           },
           "fNbt": {
             "target": "Package",
@@ -210,10 +213,10 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'fNbt 0.6.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'fNbt 0.6.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "fNbt",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net5.0"
       ]
     }
   ]

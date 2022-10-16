@@ -4,10 +4,12 @@ using System.Numerics;
 using System.Reflection;
 using Andonuts;
 using Andonuts.Scenes;
+using Andonuts.Audio;
 using Andonuts.Scenes.Transitions;
 using Andonuts.Graphics;
 using Raylib_cs;
 using System.Collections.Generic;
+
 
 namespace Game.Scenes
 {
@@ -16,25 +18,36 @@ namespace Game.Scenes
         public scene5()
         {
             player = new Player();
-            Engine.camera.offset = new Vector2((int)Raylib.GetScreenWidth() / 2 - 8, (int)Raylib.GetScreenHeight() / 2 - 12);
+            Engine.camera.offset = new Vector2((int)Engine.screenSize.X/2, (int)Engine.screenSize.Y/ 2);
             Engine.camera.target = player.playerPosition;
 
+
+
+
+            //AudioManager.Instance.SetBGM("A house.ogg", "floydTalk.wav");
+            AudioManager.Instance.SetBGM("A house.ogg", 5,8);
+            
+            Raylib.PlaySoundMulti(fx);
         }
 
         public class Player
         {
 
-            public Graphic sprite = new Graphic("animation",new Vector2(0,0));
-
+           
+            
             public Vector2 playerPosition = new Vector2(0, 0);
             public enum states { idle, walk };
             public states playerState = states.idle;
             public Vector2 inputVector = new Vector2(0, 0);
+            public Graphic sprite = new Graphic("animation", new Vector2(0, 0));
         }
 
 
         public Player player;
 
+       
+
+        Sound fx = Raylib.LoadSound(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Resources/Audio/floydTalk.wav");
 
         //public Raylib_cs.Texture2D ando = Raylib.LoadTexture("C:/Users/My HP/OneDrive/Documents/Andonuts/Engine/Andonuts/Game/Game/Resources/sprite.png");
 
@@ -45,20 +58,21 @@ namespace Game.Scenes
         {
             base.Update();
 
-
+            
 
 
             player.sprite.Update();
 
+            player.sprite.position = player.playerPosition;
 
 
             player.inputVector.X = Convert.ToInt32(Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) - Convert.ToInt32(Raylib.IsKeyDown(KeyboardKey.KEY_LEFT));
             player.inputVector.Y = Convert.ToInt32(Raylib.IsKeyDown(KeyboardKey.KEY_DOWN)) - Convert.ToInt32(Raylib.IsKeyDown(KeyboardKey.KEY_UP));
 
 
-            Engine.camera.target.X += (int)Math.Round(player.inputVector.X * Raylib.GetFrameTime() * 32);
-            Engine.camera.target.Y += (int)Math.Round(player.inputVector.Y * Raylib.GetFrameTime() * 32);
-            //Engine.camera.target = playerPosition;
+            //Engine.camera.target.X += (int)Math.Round(player.inputVector.X * Raylib.GetFrameTime() * 32);
+            //Engine.camera.target.Y += (int)Math.Round(player.inputVector.Y * Raylib.GetFrameTime() * 32);
+            Engine.camera.target = player.playerPosition;
             player.playerPosition.X += (int)Math.Round(player.inputVector.X * Raylib.GetFrameTime() * 32);
             player.playerPosition.Y += (int)Math.Round(player.inputVector.Y * Raylib.GetFrameTime() * 32);
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_HOME))

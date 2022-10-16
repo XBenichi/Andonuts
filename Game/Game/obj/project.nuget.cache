@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Y/L8k8XHf9XlFfj7Twu6isVnoziaEakgEeEESGVTZT+dCva+jZuIsnHAtY3wD2FF7LoObS8GiCf3ij0JWX2rvw==",
+  "dgSpecHash": "mZuqojWOiGn84HXBWgQ+O/U1fQgK7JJr3nFbC3Tvvp5aWF8700hcPKsm9n5F3+z2UGX2htK9RAaJ7cbntexhCQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\My HP\\OneDrive\\Documents\\Andonuts\\Engine\\Andonuts\\Game\\Game\\Game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\My HP\\.nuget\\packages\\fnbt\\0.6.4\\fnbt.0.6.4.nupkg.sha512",
-    "C:\\Users\\My HP\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\My HP\\.nuget\\packages\\raylib-cs\\4.0.0\\raylib-cs.4.0.0.nupkg.sha512",
     "C:\\Users\\My HP\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": [
@@ -13,10 +13,10 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'fNbt 0.6.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'fNbt 0.6.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "fNbt",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net5.0"
       ]
     }
   ]

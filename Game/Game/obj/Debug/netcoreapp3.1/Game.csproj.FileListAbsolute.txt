@@ -20,5 +20,4 @@ C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Game\Game\obj\Debug\n
 C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Game\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache
 C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Game\Game\bin\Debug\netcoreapp3.1\Andonuts.dll
 C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Game\Game\bin\Debug\netcoreapp3.1\Andonuts.pdb
-C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Game\Game\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\My HP\OneDrive\Documents\Andonuts\Engine\Andonuts\Game\Game\bin\Debug\netcoreapp3.1\fNbt.dll

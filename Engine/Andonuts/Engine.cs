@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using Raylib_cs;
 using Andonuts.Scenes;
+using Andonuts.Audio;
 using System.Numerics;
 
 namespace Andonuts
@@ -16,6 +17,8 @@ namespace Andonuts
         public static void Initialize(string[] args, int screenWidth, int screenHeight, string title)
         {
             screenSize = new Vector2(screenWidth, screenHeight);
+
+            Raylib.InitAudioDevice();
 
             Raylib.InitWindow(screenWidth, screenHeight, title);
 
@@ -69,6 +72,7 @@ namespace Andonuts
                     //Draw();
                     SceneManager.Instance.Update();
                     SceneManager.Instance.Draw();
+                    AudioManager.Instance.Update();
                     Raylib.EndTextureMode();
 
                     Raylib.BeginTextureMode(targetflipped);
