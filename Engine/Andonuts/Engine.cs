@@ -106,6 +106,7 @@ namespace Andonuts
 
         private static bool Quit;
 
+        public static bool Debug = true;
         public static bool Running { get; private set; }
 
         public static int ScreenScale = 2;

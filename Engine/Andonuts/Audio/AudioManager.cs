@@ -82,6 +82,7 @@ namespace Andonuts.Audio
 
 		public void SetBGM(string name,float start,float end)
 		{
+			Raylib.UnloadMusicStream(bgm); 
 			Console.WriteLine($"REQUESTING BGM: {name}");
 			musicFile = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Resources/Audio/" + name;
 			bgm = Raylib.LoadMusicStream(musicFile);
