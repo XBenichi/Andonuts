@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "mZuqojWOiGn84HXBWgQ+O/U1fQgK7JJr3nFbC3Tvvp5aWF8700hcPKsm9n5F3+z2UGX2htK9RAaJ7cbntexhCQ==",
+  "dgSpecHash": "uh7sQZawoul1CI8tymdyL1ZPCcLj/mtuNHMqnxWEjNIk5ItAqkj67GuwHoKo5U8VxN3phwq3h/xu6YvyPVySPg==",
   "success": true,
   "projectFilePath": "C:\\Users\\My HP\\OneDrive\\Documents\\Andonuts\\Engine\\Andonuts\\Game\\Game\\Game.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\My HP\\.nuget\\packages\\box2d.netstandard\\1.0.4\\box2d.netstandard.1.0.4.nupkg.sha512",
     "C:\\Users\\My HP\\.nuget\\packages\\fnbt\\0.6.4\\fnbt.0.6.4.nupkg.sha512",
-    "C:\\Users\\My HP\\.nuget\\packages\\raylib-cs\\4.0.0\\raylib-cs.4.0.0.nupkg.sha512",
-    "C:\\Users\\My HP\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\My HP\\.nuget\\packages\\raylib-cs\\4.2.0.1\\raylib-cs.4.2.0.1.nupkg.sha512",
+    "C:\\Users\\My HP\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\My HP\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": [
     {

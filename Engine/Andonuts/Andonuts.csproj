@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Box2D.NetStandard" Version="1.0.4" />
     <PackageReference Include="fNbt" Version="0.6.4" />
-    <PackageReference Include="Raylib-cs" Version="4.0.0" />
+    <PackageReference Include="Raylib-cs" Version="4.2.0.1" />
   </ItemGroup>
 
 </Project>

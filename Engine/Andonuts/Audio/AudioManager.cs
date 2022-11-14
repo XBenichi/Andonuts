@@ -31,7 +31,6 @@ namespace Andonuts.Audio
 			//this.UpdateFaders();
 			Raylib.UpdateMusicStream(bgm);
 
-
 			/*if (loop)
             {
 				if (musicLoopFile != null)

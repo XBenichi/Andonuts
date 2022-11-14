@@ -30,11 +30,22 @@ namespace Andonuts
 
             Running = true;
 
-            camera.offset = new Vector2((int)Raylib.GetScreenWidth() / 2, (int)Raylib.GetScreenHeight() / 2);
+            camera2D.offset = new Vector2((int)Raylib.GetScreenWidth() / 2, (int)Raylib.GetScreenHeight() / 2);
 
-            camera.zoom = 1;
+            camera2D.zoom = 1;
 
-            Console.Clear();
+            camera3D.fovy = 10;
+
+            camera3D.target = new Vector3(0, 0, 0);
+
+            camera3D.position = new Vector3(0, 5, 5);
+
+            camera3D.up = new Vector3(0, 1, 0);
+
+            camera3D.projection = Raylib_cs.CameraProjection.CAMERA_ORTHOGRAPHIC;
+
+             
+             Console.Clear();
 
             Console.WriteLine(" ___  _ _  ___  ___  _ _  _ _  ___  ___" +
                 "\n| . || \\ || . \\| . || \\ || | ||_ _|/ __>" +
@@ -109,13 +120,19 @@ namespace Andonuts
         public static bool Debug = true;
         public static bool Running { get; private set; }
 
+        public static bool Input = true;
+
+        public static bool Paused = false;
+
         public static int ScreenScale = 2;
 
         private static RenderTexture2D target;
 
         private static RenderTexture2D targetflipped;
 
-        public static Camera2D camera = new Camera2D();
+        public static Camera2D camera2D = new Camera2D();
+
+        public static Camera3D camera3D = new Camera3D();
 
         public static Vector2 screenSize = new Vector2();
     }

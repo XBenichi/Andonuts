@@ -108,7 +108,7 @@ namespace Andonuts.Graphics
 
 		public Vector2 position;
 
-		private Texture2D sprite;
+		public Texture2D sprite;
 
 		private NbtFile animationFile = new NbtFile();
 

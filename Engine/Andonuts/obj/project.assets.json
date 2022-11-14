@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Box2D.NetStandard/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Box2D.NetStandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Box2D.NetStandard.dll": {}
+        }
+      },
       "fNbt/0.6.4": {
         "type": "package",
         "compile": {
@@ -11,7 +20,7 @@
           "lib/net35-client/fNbt.dll": {}
         }
       },
-      "Raylib-cs/4.0.0": {
+      "Raylib-cs/4.2.0.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -53,6 +62,18 @@
     }
   },
   "libraries": {
+    "Box2D.NetStandard/1.0.4": {
+      "sha512": "XDVhUWuMUO0w0ZSKXhDCs63OUceGBitUsiYxeIL2Frq8pDu6l1YrfUdRSlY1XpWeZcMOTfxh8VL/ASRzCAtSKw==",
+      "type": "package",
+      "path": "box2d.netstandard/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "box2d.netstandard.1.0.4.nupkg.sha512",
+        "box2d.netstandard.nuspec",
+        "lib/netstandard2.1/Box2D.NetStandard.dll"
+      ]
+    },
     "fNbt/0.6.4": {
       "sha512": "ApHeYBciy/XixfMdHjknJ4ct4bCrg/rWCOgiI/YyHRp5JMtldEWnQFc23y+S7MOZbL7rG2L+cD8r9P2U1ardqQ==",
       "type": "package",
@@ -66,10 +87,10 @@
         "lib/net35-client/fNbt.xml"
       ]
     },
-    "Raylib-cs/4.0.0": {
-      "sha512": "ia5oUkINva747wBMnt7NInIYHuGcybfP1i61YwGQP1jkWeqCYmCq+B1AqB9k+RrlgeJtuTSpdP814Q7mvR8sfw==",
+    "Raylib-cs/4.2.0.1": {
+      "sha512": "DjBZuUPNVGbaWTWx2JgU4kaOn/crZWWpBlcxMBd6xUWGZxHFRr8v4nsSkOIdCm8HjkeoifNqeHLq99l0QoC8fg==",
       "type": "package",
-      "path": "raylib-cs/4.0.0",
+      "path": "raylib-cs/4.2.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -78,7 +99,7 @@
         "lib/net5.0/Raylib-cs.xml",
         "lib/net6.0/Raylib-cs.dll",
         "lib/net6.0/Raylib-cs.xml",
-        "raylib-cs.4.0.0.nupkg.sha512",
+        "raylib-cs.4.2.0.1.nupkg.sha512",
         "raylib-cs.nuspec",
         "raylib-cs_64x64.png",
         "runtimes/linux-x64/native/libraylib.so",
@@ -137,7 +158,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Raylib-cs >= 4.0.0",
+      "Box2D.NetStandard >= 1.0.4",
+      "Raylib-cs >= 4.2.0.1",
       "fNbt >= 0.6.4"
     ]
   },
@@ -180,9 +202,13 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Box2D.NetStandard": {
+            "target": "Package",
+            "version": "[1.0.4, )"
+          },
           "Raylib-cs": {
             "target": "Package",
-            "version": "[4.0.0, )"
+            "version": "[4.2.0.1, )"
           },
           "fNbt": {
             "target": "Package",
@@ -204,7 +230,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
       }
     }
   },

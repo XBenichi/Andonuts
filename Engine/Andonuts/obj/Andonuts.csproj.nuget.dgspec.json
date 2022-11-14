@@ -40,9 +40,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Box2D.NetStandard": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Raylib-cs": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.2.0.1, )"
             },
             "fNbt": {
               "target": "Package",
@@ -64,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
         }
       }
     }

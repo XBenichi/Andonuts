@@ -18,12 +18,7 @@ namespace Game
 				Scene newScene = new TitleScene();
 				SceneManager.Instance.Push(newScene);
 				//Console.WriteLine(SceneManager.Instance);
-				while (Engine.Running)
-				{
-					Engine.Update();
-					
-					
-				}
+				Engine.Update();
 			}
 			catch (Exception value)
 			{
